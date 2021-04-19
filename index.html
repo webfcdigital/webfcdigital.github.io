@@ -5,8 +5,8 @@
     <style>
       body { font-family: Tahoma, Geneva, sans-serif; }
     </style>
-    <script src="https://webfcdigital.github.io/colyseus.js"></script>
-  </head>
+    
+</head>
   <body>
     <strong>Messages</strong><br>
 
@@ -27,7 +27,7 @@
     <button onclick="getAvailableRooms()">List avaiable rooms</button>
     <button onclick="closeConnection()">Close connection</button>
     <button onclick="reconnect()">Re-join last closed connection</button>
-
+    <script src="https://unpkg.com/colyseus.js@^0.14.0/dist/colyseus.js"></script>
     <script>
       var host = (window.document.location.host || "localhost").replace(/:.*/, '');
       var client = new Colyseus.Client('wss://sysnba.vrglass.com/wslijsb72gejfpjlmvuothjqtxhq/3000/');
