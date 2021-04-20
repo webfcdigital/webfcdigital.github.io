@@ -30,10 +30,12 @@
     <script src="https://unpkg.com/colyseus.js@^0.14.0/dist/colyseus.js"></script>
     <script>
       var host = (window.document.location.host || "localhost").replace(/:.*/, '');
-      var client = new Colyseus.Client('wss://sysnba.vrglass.com/wslijsb72gejfpjlmvuothjqtxhq/3000/');
+      var client = new Colyseus.Client('ws://sysnba.vrglass.com/wslijsb72gejfpjlmvuothjqtxhq/3000');
       var room;
 
       function addListeners (room) {
+
+        console.log(room); 
           console.log('joined!');
           room.onMessage("*", (type, message) => {
               console.log("received message:", type, "=>", message);
