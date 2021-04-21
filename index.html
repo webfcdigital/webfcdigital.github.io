@@ -5,7 +5,7 @@
     <style>
       body { font-family: Tahoma, Geneva, sans-serif; }
     </style>
-    
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.css">
 </head>
   <body>
     <strong>Messages</strong><br>
@@ -30,7 +30,7 @@
     <script src="https://unpkg.com/colyseus.js@^0.14.0/dist/colyseus.js"></script>
     <script>
       var host = (window.document.location.host || "localhost").replace(/:.*/, '');
-      var client = new Colyseus.Client('ws://sysnba.vrglass.com/wslijsb72gejfpjlmvuothjqtxhq/3000');
+      var client = new Colyseus.Client('wss://sysnba.vrglass.com/wslijsb72gejfxpjlmvuothjqtxhq/3000');
       var room;
 
       function addListeners (room) {
@@ -60,7 +60,9 @@
       }
 
       function create () {
-          client.create(document.getElementById('room_name').value, { code: "one" }).then((r) => {
+         
+        console.log(client); 
+        client.create(document.getElementById('room_name').value, { code: "one" }).then((r) => {
               room = r
               addListeners(room);
           });
